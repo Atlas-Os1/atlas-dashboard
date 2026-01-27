@@ -1,4 +1,6 @@
-# 🌳 Atlas Live View - Quick Start
+# Atlas Live View - Quick Start
+
+Powered by **Flo** - Your flowing ghost guardian 👻
 
 ## What You Have
 
@@ -37,12 +39,13 @@ Open http://localhost:3000
 ## ✅ What Works Right Now
 
 - **Dashboard** - Overview of all projects
-- **Atlas Avatar** - Animated 🌳 showing system health
+- **Flo Avatar** - Animated flowing ghost showing system health with dynamic animations
 - **Project Cards** - Status for each Cloudflare project
 - **Analytics** - Charts and metrics
 - **Navigation** - Between Dashboard/Analytics/Logs
 - **Dark Mode** - Auto-detects system preference
 - **Responsive** - Works on mobile/tablet/desktop
+- **Health Animations** - Flo flows faster when healthy, pulses when warning, struggles when critical
 
 ## 📍 Where Is Everything?
 

@@ -21,7 +21,7 @@ async function LogsContent() {
 
         <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 font-mono text-sm">
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            📋 Log streaming will be available once Cloudflare Logpush or Tail Workers are configured.
+            📋 Flo is ready to stream logs once Cloudflare Logpush or Tail Workers are configured.
           </p>
           
           <div className="space-y-2 text-xs">

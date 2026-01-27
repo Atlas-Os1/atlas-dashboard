@@ -1,4 +1,6 @@
-# 🌳 Atlas Live View - Completion Summary
+# Atlas Live View - Completion Summary
+
+Powered by **Flo** 👻 - Your flowing ghost guardian
 
 ## ✅ Project Complete!
 
@@ -19,7 +21,8 @@ The **Atlas Live View** monitoring dashboard has been successfully built and is 
 ### Features Implemented
 
 #### 1. **Main Dashboard** (`/`)
-- Animated Atlas Avatar (🌳) showing overall system health
+- Animated Flo Avatar (flowing ghost) showing overall system health with dynamic animations
+- Health-based animations: flows faster when healthy, pulses when warning, struggles when critical
 - Project status cards for all monitored projects
 - Worker analytics charts (requests, errors, CPU time)
 - Recent activity feed

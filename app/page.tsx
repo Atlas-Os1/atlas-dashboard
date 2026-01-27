@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import Image from 'next/image';
 import { AtlasAvatar } from '@/components/atlas-avatar';
 import { ProjectCard } from '@/components/project-card';
 import { ActivityFeed } from '@/components/activity-feed';
@@ -70,8 +71,16 @@ function LoadingState() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-center">
-        <div className="text-6xl mb-4">🌳</div>
-        <p className="text-gray-600 dark:text-gray-400">Loading Atlas...</p>
+        <div className="w-24 h-24 mx-auto mb-4 relative animate-pulse">
+          <Image
+            src="https://pub-748cd0b5fd7d4d38a0c3ad5c09d205ae.r2.dev/skills/art_bucket/flo-avatar-orange-black.png"
+            alt="Flo"
+            width={96}
+            height={96}
+            className="object-contain"
+          />
+        </div>
+        <p className="text-gray-600 dark:text-gray-400">Flo is loading Atlas...</p>
       </div>
     </div>
   );

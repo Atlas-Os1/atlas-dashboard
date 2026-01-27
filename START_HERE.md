@@ -1,4 +1,6 @@
-# 🌳 START HERE - Atlas Live View
+# START HERE - Atlas Live View
+
+Powered by **Flo** 👻 - Your flowing ghost guardian
 
 ## You Have a Complete Monitoring Dashboard!
 
@@ -73,7 +75,7 @@ See `DEPLOYMENT.md` for step-by-step instructions:
 
 ### Features
 ✅ Real-time monitoring dashboard  
-✅ Animated Atlas avatar (🌳)  
+✅ Animated Flo avatar (flowing ghost with health-based animations)  
 ✅ Project status cards  
 ✅ Worker analytics charts  
 ✅ Activity feed  
@@ -81,6 +83,7 @@ See `DEPLOYMENT.md` for step-by-step instructions:
 ✅ Detailed analytics page  
 ✅ Responsive design  
 ✅ Dark mode support  
+✅ Dynamic animations based on system health  
 
 ### Monitored Projects
 - Kiamichi Business Connect (kiamichibizconnect.com)

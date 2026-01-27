@@ -1,20 +1,21 @@
-# Atlas Live View 🌳
+# Atlas Live View
 
-Centralized monitoring dashboard for all Minte's Cloudflare projects.
+Centralized monitoring dashboard for all Minte's Cloudflare projects, powered by **Flo** - your orange-to-black gradient flowing ghost guardian.
 
 ## Overview
 
-Atlas Live View is an admin dashboard that provides real-time monitoring and analytics for all Cloudflare Workers projects. It displays project health, request analytics, error rates, CPU usage, and recent activity across all your deployments.
+Atlas Live View is an admin dashboard that provides real-time monitoring and analytics for all Cloudflare Workers projects. It displays project health, request analytics, error rates, CPU usage, and recent activity across all your deployments. Watch as Flo flows and pulses based on system health!
 
 ## Features
 
 - **Real-Time Monitoring**: Track all projects in one place
-- **Animated Atlas Avatar**: Visual system health indicator (🌳)
+- **Flo Avatar**: Animated flowing ghost avatar that pulses and glows based on system health
 - **Project Cards**: Quick status overview for each project
 - **Worker Analytics**: Request counts, error rates, CPU time
 - **Activity Feed**: Recent deployments and events
 - **Detailed Views**: Deep dive into individual project metrics
 - **Auto-Refresh**: Updates every 30 seconds
+- **Health-Based Animations**: Flo flows faster when healthy, slower when struggling
 
 ## Monitored Projects
 
