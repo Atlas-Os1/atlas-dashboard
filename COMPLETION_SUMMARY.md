@@ -56,10 +56,12 @@ The **Atlas Live View** monitoring dashboard has been successfully built and is 
 
 ### Components Built
 
-1. **AtlasAvatar** - Animated tree emoji with:
-   - Color-coded health status (green/amber/red)
-   - Pulsing glow effect
-   - Scaling animation
+1. **AtlasAvatar** - Animated Flo (flowing ghost) with:
+   - Color-coded health status glow (green/amber/red)
+   - Multi-layer flowing glow effects
+   - Health-based animation speed (flows faster when healthy)
+   - Gentle rotation and floating motion
+   - Flowing particles when healthy
    - System metrics display
 
 2. **ProjectCard** - Status cards showing:

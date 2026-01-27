@@ -1,5 +1,7 @@
 # Atlas Live View - Project Status
 
+Powered by **Flo** 👻 - Your flowing ghost guardian
+
 ## ✅ Completed Features
 
 ### Core Infrastructure
@@ -13,7 +15,10 @@
 
 ### Dashboard Features
 - [x] Main dashboard page (`/`)
-- [x] Animated Atlas avatar (🌳) with health indicator
+- [x] Animated Flo avatar (flowing ghost) with health-based animations
+- [x] Dynamic flow speed based on system health
+- [x] Multi-layer glow effects
+- [x] Flowing particle effects when healthy
 - [x] Project status cards
 - [x] Worker analytics visualization (charts)
 - [x] Activity feed for recent events
@@ -28,11 +33,11 @@
 - [x] Logs page (`/logs` - placeholder)
 
 ### Components
-- [x] AtlasAvatar - Animated health indicator
+- [x] AtlasAvatar - Animated Flo with health-based flowing effects
 - [x] ProjectCard - Status display for each project
 - [x] ActivityFeed - Recent events timeline
 - [x] WorkerAnalyticsChart - Recharts visualization
-- [x] Navigation - Top navigation bar
+- [x] Navigation - Top navigation bar with Flo branding
 - [x] RefreshButton - Manual data refresh
 
 ### Data Integration
