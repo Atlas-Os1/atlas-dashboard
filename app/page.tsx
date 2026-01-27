@@ -71,13 +71,14 @@ function LoadingState() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-center">
-        <div className="w-24 h-24 mx-auto mb-4 relative animate-pulse">
+        <div className="w-24 h-24 mx-auto mb-4 relative">
           <Image
-            src="https://pub-748cd0b5fd7d4d38a0c3ad5c09d205ae.r2.dev/skills/art_bucket/flo-avatar-orange-black.png"
+            src="https://pub-748cd0b5fd7d4d38a0c3ad5c09d205ae.r2.dev/skills/art_bucket/flo-animated.gif"
             alt="Flo"
             width={96}
             height={96}
             className="object-contain"
+            unoptimized
           />
         </div>
         <p className="text-gray-600 dark:text-gray-400">Flo is loading Atlas...</p>

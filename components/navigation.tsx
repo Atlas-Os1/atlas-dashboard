@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { Home, BarChart3, FileText } from 'lucide-react';
 import Image from 'next/image';
 
-const FLO_AVATAR_URL = 'https://pub-748cd0b5fd7d4d38a0c3ad5c09d205ae.r2.dev/skills/art_bucket/flo-avatar-orange-black.png';
+const FLO_AVATAR_URL = 'https://pub-748cd0b5fd7d4d38a0c3ad5c09d205ae.r2.dev/skills/art_bucket/flo-animated.gif';
 
 export function Navigation() {
   const pathname = usePathname();

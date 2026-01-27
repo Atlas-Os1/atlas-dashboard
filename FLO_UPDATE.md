@@ -185,7 +185,7 @@ npm run build
 
 ### Image URL
 ```
-https://pub-748cd0b5fd7d4d38a0c3ad5c09d205ae.r2.dev/skills/art_bucket/flo-avatar-orange-black.png
+https://pub-748cd0b5fd7d4d38a0c3ad5c09d205ae.r2.dev/skills/art_bucket/flo-animated.gif
 ```
 
 ### Component Size Variants
