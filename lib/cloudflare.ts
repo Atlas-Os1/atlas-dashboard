@@ -53,6 +53,12 @@ class CloudflareClient {
   }
 
   async getWorkerAnalytics(scriptName: string, since?: Date): Promise<AnalyticsData | null> {
+    // Skip if scriptName is undefined or empty
+    if (!scriptName || scriptName === 'undefined') {
+      console.warn('Skipping analytics fetch for undefined script name');
+      return null;
+    }
+
     try {
       const sinceDate = since || new Date(Date.now() - 24 * 60 * 60 * 1000); // Last 24 hours
       const untilDate = new Date();
@@ -60,13 +66,16 @@ class CloudflareClient {
       const sinceParam = sinceDate.toISOString();
       const untilParam = untilDate.toISOString();
 
+      // Try Workers Analytics API (might not be available for all workers)
       const result = await this.fetch<AnalyticsData>(
-        `/accounts/${ACCOUNT_ID}/workers/scripts/${scriptName}/analytics?since=${sinceParam}&until=${untilParam}`
+        `/accounts/${ACCOUNT_ID}/workers/scripts/${encodeURIComponent(scriptName)}/analytics?since=${sinceParam}&until=${untilParam}`
       );
       
       return result;
     } catch (error) {
-      console.error(`Error fetching analytics for ${scriptName}:`, error);
+      // Silently return null if analytics aren't available
+      // This prevents 404 errors from cluttering build logs
+      console.log(`Analytics not available for ${scriptName}`);
       return null;
     }
   }

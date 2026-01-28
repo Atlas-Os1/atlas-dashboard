@@ -7,13 +7,15 @@ export async function fetchAllProjectsStatus(): Promise<Project[]> {
   
   const projectsWithStatus = await Promise.all(
     KNOWN_PROJECTS.map(async (project) => {
-      const worker = workers.find(w => w.name === project.workerId);
+      const worker = workers.find(w => w.id === project.workerId || w.name === project.workerId);
       
       if (!worker) {
+        console.log(`Worker not found for project ${project.id} (workerId: ${project.workerId})`);
         return { ...project, status: 'unknown' as const };
       }
 
-      const analytics = await cloudflare.getWorkerAnalytics(worker.name);
+      // Only fetch analytics if worker exists
+      const analytics = await cloudflare.getWorkerAnalytics(worker.id);
       
       if (!analytics) {
         return { ...project, status: 'unknown' as const };
@@ -40,7 +42,13 @@ export async function fetchWorkerAnalytics(): Promise<WorkerAnalytics[]> {
   const workers = await cloudflare.listWorkers();
   
   const analyticsPromises = workers.map(async (worker) => {
-    const analytics = await cloudflare.getWorkerAnalytics(worker.name);
+    // Skip if worker doesn't have an ID
+    if (!worker.id) {
+      console.warn('Worker missing ID:', worker);
+      return null;
+    }
+
+    const analytics = await cloudflare.getWorkerAnalytics(worker.id);
     
     if (!analytics) {
       return null;
@@ -52,7 +60,7 @@ export async function fetchWorkerAnalytics(): Promise<WorkerAnalytics[]> {
 
     return {
       workerId: worker.id,
-      workerName: worker.name,
+      workerName: worker.id, // Use ID as name
       requests: analytics.requests,
       errors: analytics.errors,
       errorRate,
