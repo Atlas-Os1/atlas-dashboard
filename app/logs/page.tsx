@@ -139,9 +139,19 @@ async function LogsContent() {
           {/* Worker Filter */}
           <select className="px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500">
             <option value="all">All Workers</option>
-            <option value="atlas-dashboard">atlas-dashboard</option>
-            <option value="atlas-api">atlas-api</option>
-            <option value="devflo-moltworker">devflo-moltworker</option>
+            <optgroup label="Kiamichi Biz Connect">
+              <option value="kiamichi-biz-connect-main">kiamichi-biz-connect (main)</option>
+              <option value="kiamichi-biz-connect-analyzer">kiamichi-biz-connect (analyzer)</option>
+              <option value="kiamichi-biz-connect-facebook">kiamichi-biz-connect (facebook)</option>
+              <option value="kiamichi-biz-connect-business-agent">kiamichi-biz-connect (business-agent)</option>
+            </optgroup>
+            <optgroup label="Other Workers">
+              <option value="twisted">twisted</option>
+              <option value="srvcflo">srvcflo</option>
+              <option value="atlas-dashboard">atlas-dashboard</option>
+              <option value="devflo-moltworker">devflo-moltworker</option>
+              <option value="gateway-proxy">gateway-proxy</option>
+            </optgroup>
           </select>
 
           {/* Level Filter */}
@@ -151,6 +161,17 @@ async function LogsContent() {
             <option value="warn">Warning</option>
             <option value="info">Info</option>
             <option value="debug">Debug</option>
+          </select>
+
+          {/* Time Range Filter */}
+          <select className="px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500">
+            <option value="15m">Last 15 minutes</option>
+            <option value="1h">Last hour</option>
+            <option value="6h">Last 6 hours</option>
+            <option value="24h" selected>Last 24 hours</option>
+            <option value="7d">Last 7 days</option>
+            <option value="30d">Last 30 days</option>
+            <option value="custom">Custom range...</option>
           </select>
 
           {/* Actions */}
