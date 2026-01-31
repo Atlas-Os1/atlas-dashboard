@@ -11,7 +11,8 @@ import {
   fetchRecentActivity,
 } from '@/lib/data-service';
 import { RefreshButton } from '@/components/refresh-button';
-import { Zap, TrendingUp, AlertCircle } from 'lucide-react';
+import { Zap, TrendingUp, AlertCircle, ListTodo, Server, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 async function DashboardContent() {
   const [projects, analytics, health, activity] = await Promise.all([
@@ -78,6 +79,50 @@ async function DashboardContent() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Quick Actions */}
+      <section>
+        <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-50 mb-4">
+          Quick Actions
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link
+            href="/tasks"
+            className="group glass rounded-xl p-6 hover:shadow-lg transition-all border-2 border-transparent hover:border-blue-300 dark:hover:border-blue-700"
+          >
+            <div className="flex items-start justify-between mb-3">
+              <div className="p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30">
+                <ListTodo className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              </div>
+              <ArrowRight className="w-5 h-5 text-neutral-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+            </div>
+            <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-50 mb-1">
+              Task Tracker
+            </h3>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              View and manage completed, current, and future tasks
+            </p>
+          </Link>
+
+          <Link
+            href="/workers"
+            className="group glass rounded-xl p-6 hover:shadow-lg transition-all border-2 border-transparent hover:border-green-300 dark:hover:border-green-700"
+          >
+            <div className="flex items-start justify-between mb-3">
+              <div className="p-3 rounded-lg bg-green-100 dark:bg-green-900/30">
+                <Server className="w-6 h-6 text-green-600 dark:text-green-400" />
+              </div>
+              <ArrowRight className="w-5 h-5 text-neutral-400 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors" />
+            </div>
+            <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-50 mb-1">
+              Worker Monitoring
+            </h3>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              Monitor all Cloudflare Workers with real-time metrics
+            </p>
+          </Link>
         </div>
       </section>
 
