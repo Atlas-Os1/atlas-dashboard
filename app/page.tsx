@@ -105,7 +105,7 @@ async function DashboardContent() {
               <div className="w-3 h-3 rounded-full bg-green-500" />
             </div>
             <p className="text-3xl font-bold text-green-900 dark:text-green-100">
-              {projects.filter(p => p.status === 'completed').length + 4}
+              {projects.filter(p => p.status === 'healthy').length + 4}
             </p>
             <p className="text-xs text-green-600 dark:text-green-400 mt-1">This sprint</p>
           </div>
@@ -116,7 +116,7 @@ async function DashboardContent() {
               <div className="w-3 h-3 rounded-full bg-blue-500 animate-pulse" />
             </div>
             <p className="text-3xl font-bold text-blue-900 dark:text-blue-100">
-              {projects.filter(p => p.status === 'active').length + 3}
+              {projects.filter(p => p.status !== 'error').length + 3}
             </p>
             <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">Active now</p>
           </div>
