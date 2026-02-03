@@ -4,6 +4,7 @@ import { AtlasAvatarV2 } from '@/components/atlas-avatar-v2';
 import { ProjectCardV2 } from '@/components/project-card-v2';
 import { ActivityFeed } from '@/components/activity-feed';
 import { WorkerAnalyticsChart } from '@/components/worker-analytics-chart';
+import { WorkerHealthCard } from '@/components/worker-health-card';
 import {
   fetchAllProjectsStatus,
   fetchWorkerAnalytics,
@@ -132,6 +133,14 @@ async function DashboardContent() {
             <p className="text-xs text-purple-600 dark:text-purple-400 mt-1">Next sprint</p>
           </div>
         </div>
+      </section>
+
+      {/* Worker Health Dashboard */}
+      <section>
+        <h2 className="text-xl font-bold text-neutral-900 dark:text-neutral-50 mb-4">
+          Worker Health
+        </h2>
+        <WorkerHealthCard />
       </section>
 
       {/* Quick Actions */}
