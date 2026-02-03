@@ -21,7 +21,7 @@
     {
       "binding": "DB",
       "database_name": "atlas-command-center",
-      "database_id": "TBD"
+      "database_id": "ae039f56-5d10-4465-b734-6f037644de04"
     }
   ],
   "r2_buckets": [
