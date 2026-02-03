@@ -24,7 +24,7 @@ class CloudflareClient {
   private async fetch<T>(endpoint: string): Promise<T> {
     const response = await fetch(`${CLOUDFLARE_API_BASE}${endpoint}`, {
       headers: this.headers,
-      next: { revalidate: 30 }, // Cache for 30 seconds
+      cache: 'no-store', // Disable cache - analytics responses too large (>2MB limit)
     });
 
     if (!response.ok) {

@@ -21,7 +21,9 @@ export class WorkerService {
     
     const workersWithMetrics = await Promise.all(
       scripts.map(async (script) => {
-        const analytics = await cloudflare.getWorkerAnalytics(script.id);
+        // CloudflareWorker.id is the script name
+        const scriptName = script.id || 'unknown';
+        const analytics = await cloudflare.getWorkerAnalytics(scriptName);
         
         // Calculate error rate from requests and errors
         const requests = analytics?.requests || 0;
@@ -33,16 +35,16 @@ export class WorkerService {
 
         return {
           id: script.id,
-          name: script.script,
+          name: scriptName,
           status,
           requests24h: requests,
           errors24h: errors,
           errorRate,
           avgCpuTime: cpuTime,
           avgDuration: 0, // Not available in current analytics
-          lastDeployment: script.modified_on,
+          lastDeployment: script.modified_on || new Date().toISOString(),
           routes: [], // TODO: Fetch from zones API when needed
-          environment: this.determineEnvironment(script.script),
+          environment: this.determineEnvironment(scriptName),
         };
       })
     );
@@ -59,7 +61,8 @@ export class WorkerService {
     return 'healthy';
   }
 
-  private determineEnvironment(scriptName: string): 'production' | 'staging' | 'development' {
+  private determineEnvironment(scriptName: string | undefined): 'production' | 'staging' | 'development' {
+    if (!scriptName) return 'production';
     const lowerName = scriptName.toLowerCase();
     if (lowerName.includes('-dev') || lowerName.includes('-development')) {
       return 'development';
