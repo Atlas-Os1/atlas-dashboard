@@ -3,6 +3,7 @@
   "name": "atlas-admin-ui",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-01-28",
+  "compatibility_flags": ["nodejs_compat"],
   "account_id": "ff3c5e2beaea9f85fee3200bfe28da16",
   "assets": {
     "directory": ".open-next/assets",
