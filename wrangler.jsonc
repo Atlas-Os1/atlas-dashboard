@@ -4,12 +4,6 @@
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-01-28",
   "account_id": "ff3c5e2beaea9f85fee3200bfe28da16",
-  "routes": [
-    {
-      "pattern": "admin.minte.dev/*",
-      "custom_domain": true
-    }
-  ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
