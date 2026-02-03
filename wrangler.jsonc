@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "atlas-dashboard",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-01-28",
+  "account_id": "ff3c5e2beaea9f85fee3200bfe28da16",
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "NEXT_PUBLIC_GATEWAY_URL": "wss://gateway.minte.dev"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "atlas-command-center",
+      "database_id": "TBD"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "STORAGE",
+      "bucket_name": "clawdis-storage-prod"
+    }
+  ]
+}
