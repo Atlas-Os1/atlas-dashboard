@@ -1,4 +1,5 @@
-import { cloudflare, WorkerScript, WorkerAnalytics } from './cloudflare-client';
+import { cloudflare } from './cloudflare';
+import type { CloudflareWorker, AnalyticsData } from '@/types';
 
 export interface WorkerWithMetrics {
   id: string;
