@@ -23,20 +23,23 @@ export class WorkerService {
       scripts.map(async (script) => {
         const analytics = await cloudflare.getWorkerAnalytics(script.id);
         
-        const status = this.determineStatus(
-          analytics?.errorRate || 0,
-          analytics?.cpuTime || 0
-        );
+        // Calculate error rate from requests and errors
+        const requests = analytics?.requests || 0;
+        const errors = analytics?.errors || 0;
+        const errorRate = requests > 0 ? (errors / requests) * 100 : 0;
+        const cpuTime = analytics?.cpu_time || 0;
+        
+        const status = this.determineStatus(errorRate, cpuTime);
 
         return {
           id: script.id,
           name: script.script,
           status,
-          requests24h: analytics?.requests || 0,
-          errors24h: analytics?.errors || 0,
-          errorRate: analytics?.errorRate || 0,
-          avgCpuTime: analytics?.cpuTime || 0,
-          avgDuration: analytics?.duration || 0,
+          requests24h: requests,
+          errors24h: errors,
+          errorRate,
+          avgCpuTime: cpuTime,
+          avgDuration: 0, // Not available in current analytics
           lastDeployment: script.modified_on,
           routes: [], // TODO: Fetch from zones API when needed
           environment: this.determineEnvironment(script.script),
