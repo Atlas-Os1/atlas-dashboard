@@ -9,7 +9,8 @@
     "binding": "ASSETS"
   },
   "vars": {
-    "NEXT_PUBLIC_GATEWAY_URL": "wss://gateway.minte.dev"
+    "NEXT_PUBLIC_GATEWAY_URL": "wss://gateway.minte.dev",
+    "CLOUDFLARE_ACCOUNT_ID": "ff3c5e2beaea9f85fee3200bfe28da16"
   },
   "d1_databases": [
     {

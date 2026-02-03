@@ -5,10 +5,17 @@ export const config = {
     accountId: process.env.CLOUDFLARE_ACCOUNT_ID || 'ff3c5e2beaea9f85fee3200bfe28da16',
     apiToken: process.env.CLOUDFLARE_API_TOKEN || '',
   },
-  gateway: {
-    url: process.env.GATEWAY_URL || 'ws://localhost:18789',
-    httpUrl: process.env.GATEWAY_HTTP_URL || 'http://localhost:18789',
-    token: process.env.GATEWAY_TOKEN || '',
+  // Flo Gateway (VPS main agent)
+  floGateway: {
+    url: process.env.FLO_GATEWAY_URL || 'wss://gateway.minte.dev',
+    httpUrl: process.env.FLO_GATEWAY_HTTP_URL || 'https://gateway.minte.dev',
+    token: process.env.FLO_GATEWAY_TOKEN || '',
+  },
+  // DevFlo Gateway (Container dev agent)
+  devFloGateway: {
+    url: process.env.DEVFLO_GATEWAY_URL || 'ws://devflo-moltworker.srvcflo.workers.dev',
+    httpUrl: process.env.DEVFLO_GATEWAY_HTTP_URL || 'https://devflo-moltworker.srvcflo.workers.dev',
+    token: process.env.DEVFLO_GATEWAY_TOKEN || '',
   },
   elevenlabs: {
     apiKey: process.env.ELEVENLABS_API_KEY || '',
@@ -18,6 +25,7 @@ export const config = {
 export function validateConfig(): string[] {
   const missing: string[] = [];
   if (!config.cloudflare.apiToken) missing.push('CLOUDFLARE_API_TOKEN');
-  if (!config.gateway.token) missing.push('GATEWAY_TOKEN');
+  if (!config.floGateway.token) missing.push('FLO_GATEWAY_TOKEN');
+  if (!config.devFloGateway.token) missing.push('DEVFLO_GATEWAY_TOKEN');
   return missing;
 }
