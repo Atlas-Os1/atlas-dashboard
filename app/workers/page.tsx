@@ -9,7 +9,7 @@ async function fetchWorkers() {
 }
 
 function WorkerCard({ worker }: { worker: any }) {
-  const statusColors = {
+  const statusColors: Record<string, string> = {
     healthy: 'bg-green-500',
     warning: 'bg-amber-500',
     error: 'bg-red-500',
