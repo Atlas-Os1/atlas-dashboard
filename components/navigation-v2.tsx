@@ -17,6 +17,8 @@ import {
   Database,
   Zap,
   Settings,
+  ListTodo,
+  Server,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -50,10 +52,11 @@ export function NavigationV2() {
 
   const navItems = [
     { href: '/', label: 'Overview', icon: Home },
+    { href: '/tasks', label: 'Tasks', icon: ListTodo },
+    { href: '/workers', label: 'Workers', icon: Server },
     { href: '/analytics', label: 'Analytics', icon: BarChart3 },
     { href: '/logs', label: 'Logs', icon: FileText },
     { href: '/database', label: 'Database', icon: Database },
-    { href: '/deployments', label: 'Deployments', icon: Zap },
   ];
 
   return (
