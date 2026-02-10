@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "atlas-admin-ui",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-01-28",
+  "compatibility_flags": ["nodejs_compat"],
+  "account_id": "ff3c5e2beaea9f85fee3200bfe28da16",
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "NEXT_PUBLIC_GATEWAY_URL": "wss://gateway.minte.dev",
+    "CLOUDFLARE_ACCOUNT_ID": "ff3c5e2beaea9f85fee3200bfe28da16"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "atlas-command-center",
+      "database_id": "ae039f56-5d10-4465-b734-6f037644de04"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "STORAGE",
+      "bucket_name": "clawdis-storage-prod"
+    }
+  ]
+}

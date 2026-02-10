@@ -19,6 +19,8 @@ import {
   Settings,
   ListTodo,
   Server,
+  MessageCircle,
+  Radio,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -53,6 +55,8 @@ export function NavigationV2() {
   const navItems = [
     { href: '/', label: 'Overview', icon: Home },
     { href: '/tasks', label: 'Tasks', icon: ListTodo },
+    { href: '/chat', label: 'Chat', icon: MessageCircle },
+    { href: '/sessions', label: 'Sessions', icon: Radio },
     { href: '/workers', label: 'Workers', icon: Server },
     { href: '/analytics', label: 'Analytics', icon: BarChart3 },
     { href: '/logs', label: 'Logs', icon: FileText },
@@ -193,15 +197,17 @@ export function NavigationV2() {
                 </AnimatePresence>
               </motion.button>
 
-              {/* Settings (future) */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-                title="Settings"
-              >
-                <Settings className="w-5 h-5 text-neutral-600 dark:text-neutral-400" />
-              </motion.button>
+              {/* Settings */}
+              <Link href="/settings">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                  title="Settings"
+                >
+                  <Settings className="w-5 h-5 text-neutral-600 dark:text-neutral-400" />
+                </motion.div>
+              </Link>
             </div>
           </div>
         </div>
